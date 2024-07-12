@@ -34,6 +34,28 @@ class CreateSlidersTable extends Migration
                 'type' => 'DATETIME',
                 'null' => true,
             ],
+            'deleted_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
+            'created_by' => [
+                'type' => 'INT',
+                'constraint' => 5,
+                'unsigned' => true,
+                'null' => true,
+            ],
+            'updated_by' => [
+                'type' => 'INT',
+                'constraint' => 5,
+                'unsigned' => true,
+                'null' => true,
+            ],
+            'deleted_by' => [
+                'type' => 'INT',
+                'constraint' => 5,
+                'unsigned' => true,
+                'null' => true,
+            ],
         ]);
         $this->forge->addKey('id', true);
         $this->forge->createTable('sliders');
@@ -44,3 +66,4 @@ class CreateSlidersTable extends Migration
         $this->forge->dropTable('sliders');
     }
 }
+?>
